@@ -29,8 +29,8 @@ sudo apt install make clang pkg-config libssl-dev build-essential git jq ncdu bs
 
 echo -e '\n\e[42mGo\e[0m\n' && sleep 1
 cd $HOME
-wget -O go1.18.1.linux-amd64.tar.gz https://golang.org/dl/go1.18.1.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && rm go1.18.1.linux-amd64.tar.gz
+wget -O go1.18.3.linux-amd64.tar.gz https://golang.org/dl/go1.18.3.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz && rm go1.18.3.linux-amd64.tar.gz
 echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
 echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
 echo 'export GO111MODULE=on' >> $HOME/.bash_profile
@@ -39,7 +39,7 @@ go version
 
 echo -e '\n\e[42mSEI\e[0m\n' && sleep 1
 rm -rf $HOME/sei-chain
-git clone --depth 1 --branch 1.0.2beta https://github.com/sei-protocol/sei-chain.git
+git clone --depth 1 --branch 1.0.4beta https://github.com/sei-protocol/sei-chain.git
 cd sei-chain && make install
 go build -o build/seid ./cmd/seid
 chmod +x ./build/seid && sudo mv ./build/seid /usr/local/bin/seid
